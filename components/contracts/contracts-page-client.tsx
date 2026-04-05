@@ -445,8 +445,8 @@ export function ContractsPageClient({
           tone="bg-[var(--warning-soft)] text-[var(--warning)]"
         />
         <StatCard
-          label="Signed this month"
-          value={query.data?.stats.signedThisMonth || 0}
+          label="Approved this month"
+          value={query.data?.stats.approvedThisMonth || 0}
           tone="bg-[var(--success-soft)] text-[var(--success)]"
         />
       </section>

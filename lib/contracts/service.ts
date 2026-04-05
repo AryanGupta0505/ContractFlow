@@ -683,10 +683,10 @@ function getStats(items: ContractRecord[]) {
   return {
     totalContracts: items.length,
     pendingApprovals: items.filter((item) => item.status === "PENDING").length,
-    signedThisMonth: items.filter((item) => {
+    approvedThisMonth: items.filter((item) => {
       const updated = new Date(item.updatedAt);
       return (
-        item.status === "SIGNED" &&
+        item.status === "APPROVED" &&
         updated.getUTCFullYear() === currentYear &&
         updated.getUTCMonth() === currentMonth
       );
@@ -1384,10 +1384,10 @@ export async function getDashboardData(organizationId: string) {
   const totalActive = records.filter((item) => item.status !== "ARCHIVED").length;
   const pendingContracts = records.filter((item) => item.status === "PENDING").length;
   const today = new Date();
-  const signedThisMonth = records.filter((item) => {
+  const approvedThisMonth = records.filter((item) => {
     const updated = new Date(item.updatedAt);
     return (
-      item.status === "SIGNED" &&
+      item.status === "APPROVED" &&
       updated.getUTCFullYear() === today.getUTCFullYear() &&
       updated.getUTCMonth() === today.getUTCMonth()
     );
@@ -1489,8 +1489,8 @@ export async function getDashboardData(organizationId: string) {
         note: `${pendingContracts} currently need action`,
       },
       {
-        label: "Signed this month",
-        value: String(signedThisMonth),
+        label: "Approved this month",
+        value: String(approvedThisMonth),
         note: "Based on latest contract updates",
       },
       {

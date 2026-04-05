@@ -100,7 +100,7 @@ export type ContractFilters = {
 export type ContractStats = {
   totalContracts: number;
   pendingApprovals: number;
-  signedThisMonth: number;
+  approvedThisMonth: number;
 };
 
 export type ContractsResponse = {
