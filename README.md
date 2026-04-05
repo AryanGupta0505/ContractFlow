@@ -18,6 +18,12 @@ The project is built as a single Next.js application with clear domain modules, 
 
 ---
 
+# 🌐 Live Demo
+
+👉 https://contractflow-0j62.onrender.com
+
+---
+
 # Table of Contents
 
 - [What the System Does](#what-the-system-does)
@@ -59,15 +65,15 @@ This makes the app useful as both a working product and a reference architecture
 
 - Users sign up or sign in with email and password.
 - `NextAuth` manages authentication and session creation.
-- The server resolves the user's active organization membership.
+- The server resolves the user’s active organization membership.
 - A role is derived from membership data such as `ADMIN`, `MANAGER`, or `EMPLOYEE`.
 - Permissions are computed from that role before protected actions are allowed.
 
 Primary files:
 
-- `app/api/auth/[...nextauth]/route.ts`
-- `lib/auth.ts`
-- `lib/contracts/access.ts`
+- [app/api/auth/[...nextauth]/route.ts](c:\Users\gpart\Desktop\contract\app\api\auth\[...nextauth]\route.ts)
+- [lib/auth.ts](c:\Users\gpart\Desktop\contract\lib\auth.ts)
+- [lib/contracts/access.ts](c:\Users\gpart\Desktop\contract\lib\contracts\access.ts)
 
 ## 2. Contract Creation
 
@@ -79,8 +85,8 @@ Primary files:
 
 Primary files:
 
-- `app/api/contracts/route.ts`
-- `lib/contracts/service.ts`
+- [app/api/contracts/route.ts](c:\Users\gpart\Desktop\contract\app\api\contracts\route.ts)
+- [lib/contracts/service.ts](c:\Users\gpart\Desktop\contract\lib\contracts\service.ts)
 
 ## 3. Workflow Assignment
 
@@ -91,8 +97,8 @@ Primary files:
 
 Primary files:
 
-- `lib/workflows/service.ts`
-- `app/api/contracts/bulk/route.ts`
+- [lib/workflows/service.ts](c:\Users\gpart\Desktop\contract\lib\workflows\service.ts)
+- [app/api/contracts/bulk/route.ts](c:\Users\gpart\Desktop\contract\app\api\contracts\bulk\route.ts)
 
 ## 4. Approval Execution
 
@@ -105,19 +111,19 @@ Primary files:
 
 Primary files:
 
-- `app/api/contracts/[id]/actions/route.ts`
-- `lib/contracts/service.ts`
+- [app/api/contracts/[id]/actions/route.ts](c:\Users\gpart\Desktop\contract\app\api\contracts\[id]\actions\route.ts)
+- [lib/contracts/service.ts](c:\Users\gpart\Desktop\contract\lib\contracts\service.ts)
 
 ## 5. Signatures and Completion
 
 - Signature requests and signature status are tracked separately from approvals.
-- Signed activity contributes to the contract's latest activity timeline.
+- Signed activity contributes to the contract’s latest activity timeline.
 - The contract can then be viewed, exported, or shared as a completed agreement.
 
 Primary files:
 
-- `prisma/schema.prisma`
-- `app/api/contracts/[id]/pdf/route.ts`
+- [prisma/schema.prisma](c:\Users\gpart\Desktop\contract\prisma\schema.prisma)
+- [app/api/contracts/[id]/pdf/route.ts](c:\Users\gpart\Desktop\contract\app\api\contracts\[id]\pdf\route.ts)
 
 ## 6. Notifications and Workspace Visibility
 
@@ -128,9 +134,9 @@ Primary files:
 
 Primary files:
 
-- `lib/notifications/service.ts`
-- `server.mjs`
-- `app/api/notifications/route.ts`
+- [lib/notifications/service.ts](c:\Users\gpart\Desktop\contract\lib\notifications\service.ts)
+- [server.mjs](c:\Users\gpart\Desktop\contract\server.mjs)
+- [app/api/notifications/route.ts](c:\Users\gpart\Desktop\contract\app\api\notifications\route.ts)
 
 ---
 
@@ -189,7 +195,7 @@ DRAFT
 
 Primary file:
 
-- `app/(dashboard)/dashboard/page.tsx`
+- [app/(dashboard)/dashboard/page.tsx](c:\Users\gpart\Desktop\contract\app\(dashboard)\dashboard\page.tsx)
 
 ## Contracts Page Flow
 
@@ -200,9 +206,9 @@ Primary file:
 
 Primary files:
 
-- `app/(dashboard)/contracts/page.tsx`
-- `components/contracts/contracts-page-client.tsx`
-- `lib/contracts/service.ts`
+- [app/(dashboard)/contracts/page.tsx](c:\Users\gpart\Desktop\contract\app\(dashboard)\contracts\page.tsx)
+- [components/contracts/contracts-page-client.tsx](c:\Users\gpart\Desktop\contract\components\contracts\contracts-page-client.tsx)
+- [lib/contracts/service.ts](c:\Users\gpart\Desktop\contract\lib\contracts\service.ts)
 
 ## Workflow Builder Flow
 
@@ -213,9 +219,9 @@ Primary files:
 
 Primary files:
 
-- `app/(dashboard)/workflows/page.tsx`
-- `components/workflows/workflows-page-client.tsx`
-- `lib/workflows/service.ts`
+- [app/(dashboard)/workflows/page.tsx](c:\Users\gpart\Desktop\contract\app\(dashboard)\workflows\page.tsx)
+- [components/workflows/workflows-page-client.tsx](c:\Users\gpart\Desktop\contract\components\workflows\workflows-page-client.tsx)
+- [lib/workflows/service.ts](c:\Users\gpart\Desktop\contract\lib\workflows\service.ts)
 
 ## Template Flow
 
@@ -225,9 +231,9 @@ Primary files:
 
 Primary files:
 
-- `app/(dashboard)/templates/page.tsx`
-- `app/api/templates/route.ts`
-- `app/api/ai/templates/route.ts`
+- [app/(dashboard)/templates/page.tsx](c:\Users\gpart\Desktop\contract\app\(dashboard)\templates\page.tsx)
+- [app/api/templates/route.ts](c:\Users\gpart\Desktop\contract\app\api\templates\route.ts)
+- [app/api/ai/templates/route.ts](c:\Users\gpart\Desktop\contract\app\api\ai\templates\route.ts)
 
 ## AI Assistance Flow
 
@@ -239,9 +245,9 @@ Primary files:
 
 Primary files:
 
-- `app/api/ai/generate-contract/route.ts`
-- `app/api/ai/templates/route.ts`
-- `app/api/ai/workflows/route.ts`
+- [app/api/ai/generate-contract/route.ts](c:\Users\gpart\Desktop\contract\app\api\ai\generate-contract\route.ts)
+- [app/api/ai/templates/route.ts](c:\Users\gpart\Desktop\contract\app\api\ai\templates\route.ts)
+- [app/api/ai/workflows/route.ts](c:\Users\gpart\Desktop\contract\app\api\ai\workflows\route.ts)
 
 ---
 
@@ -282,8 +288,8 @@ Responsible for:
 
 Main directories:
 
-- `app`
-- `components`
+- [app](c:\Users\gpart\Desktop\contract\app)
+- [components](c:\Users\gpart\Desktop\contract\components)
 
 ### 2. API Layer
 
@@ -297,7 +303,7 @@ Responsible for:
 
 Main directory:
 
-- `app/api`
+- [app/api](c:\Users\gpart\Desktop\contract\app\api)
 
 ### 3. Domain Service Layer
 
@@ -312,11 +318,11 @@ Responsible for:
 
 Main directories:
 
-- `lib/contracts`
-- `lib/workflows`
-- `lib/notifications`
-- `lib/memberships`
-- `lib/settings`
+- [lib/contracts](c:\Users\gpart\Desktop\contract\lib\contracts)
+- [lib/workflows](c:\Users\gpart\Desktop\contract\lib\workflows)
+- [lib/notifications](c:\Users\gpart\Desktop\contract\lib\notifications)
+- [lib/memberships](c:\Users\gpart\Desktop\contract\lib\memberships)
+- [lib/settings](c:\Users\gpart\Desktop\contract\lib\settings)
 
 ### 4. Persistence Layer
 
@@ -329,8 +335,8 @@ Responsible for:
 
 Main files:
 
-- `prisma/schema.prisma`
-- `lib/prisma.ts`
+- [prisma/schema.prisma](c:\Users\gpart\Desktop\contract\prisma\schema.prisma)
+- [lib/prisma.ts](c:\Users\gpart\Desktop\contract\lib\prisma.ts)
 
 ### 5. Real-Time Delivery Layer
 
@@ -342,7 +348,7 @@ Responsible for:
 
 Main file:
 
-- `server.mjs`
+- [server.mjs](c:\Users\gpart\Desktop\contract\server.mjs)
 
 ## Module Interaction Diagram
 
@@ -385,9 +391,9 @@ Browser requests /api/contracts
 
 Concrete files:
 
-- `app/api/contracts/route.ts`
-- `lib/contracts/access.ts`
-- `lib/contracts/service.ts`
+- [app/api/contracts/route.ts](c:\Users\gpart\Desktop\contract\app\api\contracts\route.ts)
+- [lib/contracts/access.ts](c:\Users\gpart\Desktop\contract\lib\contracts\access.ts)
+- [lib/contracts/service.ts](c:\Users\gpart\Desktop\contract\lib\contracts\service.ts)
 
 ## Example: Approve a Contract
 
@@ -404,8 +410,8 @@ Browser posts /api/contracts/[id]/actions
 
 Concrete files:
 
-- `app/api/contracts/[id]/actions/route.ts`
-- `lib/contracts/service.ts`
+- [app/api/contracts/[id]/actions/route.ts](c:\Users\gpart\Desktop\contract\app\api\contracts\[id]\actions\route.ts)
+- [lib/contracts/service.ts](c:\Users\gpart\Desktop\contract\lib\contracts\service.ts)
 
 ## Example: Load Notifications
 
@@ -420,8 +426,8 @@ Browser requests /api/notifications
 
 Concrete files:
 
-- `app/api/notifications/route.ts`
-- `lib/notifications/service.ts`
+- [app/api/notifications/route.ts](c:\Users\gpart\Desktop\contract\app\api\notifications\route.ts)
+- [lib/notifications/service.ts](c:\Users\gpart\Desktop\contract\lib\notifications\service.ts)
 
 ---
 
@@ -541,11 +547,11 @@ contract/
 
 ## Important Folders
 
-- `app`: Next.js pages, layouts, and route handlers
-- `components`: reusable UI modules
-- `lib`: business logic, API helpers, and shared utilities
-- `prisma`: schema and migrations
-- `server.mjs`: custom server with WebSocket integration
+- [app](c:\Users\gpart\Desktop\contract\app): Next.js pages, layouts, and route handlers
+- [components](c:\Users\gpart\Desktop\contract\components): reusable UI modules
+- [lib](c:\Users\gpart\Desktop\contract\lib): business logic, API helpers, and shared utilities
+- [prisma](c:\Users\gpart\Desktop\contract\prisma): schema and migrations
+- [server.mjs](c:\Users\gpart\Desktop\contract\server.mjs): custom server with WebSocket integration
 
 ---
 
@@ -597,7 +603,7 @@ ContractFlow applies access control in layers:
 
 Primary file:
 
-- `lib/contracts/access.ts`
+- [lib/contracts/access.ts](c:\Users\gpart\Desktop\contract\lib\contracts\access.ts)
 
 ---
 
@@ -667,6 +673,3 @@ npm run lint
 
 GitHub  
 https://github.com/AryanGupta0505
-
-
-
