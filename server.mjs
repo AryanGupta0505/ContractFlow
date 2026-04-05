@@ -8,7 +8,9 @@ import pg from "pg";
 import { WebSocket, WebSocketServer } from "ws";
 
 const dev = process.env.NODE_ENV !== "production" && !process.argv.includes("--prod");
-const hostname = process.env.HOSTNAME || (dev ? "127.0.0.1" : "0.0.0.0");
+const hostname = dev
+  ? process.env.HOSTNAME || "127.0.0.1"
+  : process.env.BIND_HOST || "0.0.0.0";
 const port = Number(process.env.PORT || 3000);
 const databaseUrl = process.env.DATABASE_URL;
 const browserHostname = hostname === "0.0.0.0" ? "localhost" : hostname;
