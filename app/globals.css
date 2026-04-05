@@ -1,26 +1,262 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f7fb;
+  --foreground: #182033;
+  --surface: #ffffff;
+  --surface-soft: #f8faff;
+  --border: #e6eaf2;
+  --primary: #5068ff;
+  --primary-soft: #eef1ff;
+  --primary-strong: #3148d8;
+  --accent: #7c8cff;
+  --success-soft: #eefaf3;
+  --success: #1f9d62;
+  --warning-soft: #fff6ea;
+  --warning: #d97a14;
+  --danger-soft: #fff1f2;
+  --danger-border: #fecdd3;
+  --danger: #be123c;
+  --info-soft: #f1f5f9;
+  --info-border: #cbd5e1;
+  --info: #475569;
+  --muted: #6b7285;
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  --background: #0f1724;
+  --foreground: #ecf2ff;
+  --surface: #131d2d;
+  --surface-soft: #1a2638;
+  --border: #22324a;
+  --primary: #8ea1ff;
+  --primary-soft: rgba(142, 161, 255, 0.16);
+  --primary-strong: #bac6ff;
+  --accent: #aab7ff;
+  --success-soft: rgba(31, 157, 98, 0.12);
+  --success: #61d095;
+  --warning-soft: rgba(217, 122, 20, 0.12);
+  --warning: #f7b267;
+  --danger-soft: rgba(190, 24, 93, 0.14);
+  --danger-border: rgba(244, 114, 182, 0.24);
+  --danger: #f9a8d4;
+  --info-soft: rgba(71, 85, 105, 0.22);
+  --info-border: rgba(148, 163, 184, 0.24);
+  --info: #cbd5e1;
+  --muted: #9eacc1;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    --background: #0f1724;
+    --foreground: #ecf2ff;
+    --surface: #131d2d;
+    --surface-soft: #1a2638;
+    --border: #22324a;
+    --primary: #8ea1ff;
+    --primary-soft: rgba(142, 161, 255, 0.16);
+    --primary-strong: #bac6ff;
+    --accent: #aab7ff;
+    --success-soft: rgba(31, 157, 98, 0.12);
+    --success: #61d095;
+    --warning-soft: rgba(217, 122, 20, 0.12);
+    --warning: #f7b267;
+    --danger-soft: rgba(190, 24, 93, 0.14);
+    --danger-border: rgba(244, 114, 182, 0.24);
+    --danger: #f9a8d4;
+    --info-soft: rgba(71, 85, 105, 0.22);
+    --info-border: rgba(148, 163, 184, 0.24);
+    --info: #cbd5e1;
+    --muted: #9eacc1;
+    color-scheme: dark;
+  }
+}
+
+html[data-theme="dark"] :is(
+  [class*="bg-white"],
+  [class*="bg-white/"],
+  [class*="#ffffff"],
+  [class*="#fbfcff"],
+  [class*="#f8faff"],
+  [class*="#f8fbff"],
+  [class*="#f7faff"],
+  [class*="#f9fbff"],
+  [class*="#fff8ee"],
+  [class*="#fff7ea"],
+  [class*="#fffaf2"],
+  [class*="#fff9ee"],
+  [class*="#fffefb"]
+) {
+  background: var(--surface) !important;
+}
+
+html[data-theme="dark"] :is(
+  [class*="border-white"],
+  [class*="border-[rgba(15,23,42,0.08)]"]
+) {
+  border-color: var(--border) !important;
+}
+
+html[data-theme="dark"] :is(
+  input,
+  textarea,
+  select,
+  summary,
+  [class*="bg-slate-100"],
+  [class*="bg-rose-50"],
+  [class*="bg-red-50"],
+  [class*="bg-amber-50"],
+  [class*="bg-emerald-50"],
+  [class*="bg-sky-50"]
+) {
+  background-color: var(--surface-soft);
+}
+
+html[data-theme="dark"] :is(
+  [class*="bg-slate-100"],
+  [class*="text-slate-600"]
+) {
+  color: var(--muted) !important;
+}
+
+html[data-theme="dark"] :is(
+  [class*="bg-rose-50"],
+  [class*="bg-red-50"]
+) {
+  background-color: rgba(190, 24, 93, 0.14) !important;
+  border-color: rgba(244, 114, 182, 0.24) !important;
+}
+
+html[data-theme="dark"] :is(
+  [class*="bg-amber-50"]
+) {
+  background-color: rgba(217, 122, 20, 0.14) !important;
+  border-color: rgba(247, 178, 103, 0.24) !important;
+}
+
+html[data-theme="dark"] :is(
+  [class*="bg-emerald-50"]
+) {
+  background-color: rgba(31, 157, 98, 0.14) !important;
+  border-color: rgba(97, 208, 149, 0.24) !important;
+}
+
+html[data-theme="dark"] :is(
+  [class*="bg-sky-50"]
+) {
+  background-color: rgba(14, 165, 233, 0.14) !important;
+  border-color: rgba(125, 211, 252, 0.24) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) :is(
+    [class*="bg-white"],
+    [class*="bg-white/"],
+    [class*="#ffffff"],
+    [class*="#fbfcff"],
+    [class*="#f8faff"],
+    [class*="#f8fbff"],
+    [class*="#f7faff"],
+    [class*="#f9fbff"],
+    [class*="#fff8ee"],
+    [class*="#fff7ea"],
+    [class*="#fffaf2"],
+    [class*="#fff9ee"],
+    [class*="#fffefb"]
+  ) {
+    background: var(--surface) !important;
+  }
+
+  html:not([data-theme]) :is(
+    [class*="border-white"],
+    [class*="border-[rgba(15,23,42,0.08)]"]
+  ) {
+    border-color: var(--border) !important;
+  }
+
+  html:not([data-theme]) :is(
+    input,
+    textarea,
+    select,
+    summary,
+    [class*="bg-slate-100"],
+    [class*="bg-rose-50"],
+    [class*="bg-red-50"],
+    [class*="bg-amber-50"],
+    [class*="bg-emerald-50"],
+    [class*="bg-sky-50"]
+  ) {
+    background-color: var(--surface-soft);
+  }
+
+  html:not([data-theme]) :is(
+    [class*="bg-slate-100"],
+    [class*="text-slate-600"]
+  ) {
+    color: var(--muted) !important;
+  }
+
+  html:not([data-theme]) :is(
+    [class*="bg-rose-50"],
+    [class*="bg-red-50"]
+  ) {
+    background-color: rgba(190, 24, 93, 0.14) !important;
+    border-color: rgba(244, 114, 182, 0.24) !important;
+  }
+
+  html:not([data-theme]) :is([class*="bg-amber-50"]) {
+    background-color: rgba(217, 122, 20, 0.14) !important;
+    border-color: rgba(247, 178, 103, 0.24) !important;
+  }
+
+  html:not([data-theme]) :is([class*="bg-emerald-50"]) {
+    background-color: rgba(31, 157, 98, 0.14) !important;
+    border-color: rgba(97, 208, 149, 0.24) !important;
+  }
+
+  html:not([data-theme]) :is([class*="bg-sky-50"]) {
+    background-color: rgba(14, 165, 233, 0.14) !important;
+    border-color: rgba(125, 211, 252, 0.24) !important;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: "Segoe UI", "Aptos", "Trebuchet MS", sans-serif;
+  --font-mono: "Consolas", "Cascadia Code", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  min-height: 100vh;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", "Aptos", "Trebuchet MS", sans-serif;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  transition:
+    color 160ms ease,
+    background-color 160ms ease,
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+::selection {
+  background: rgba(80, 104, 255, 0.18);
 }

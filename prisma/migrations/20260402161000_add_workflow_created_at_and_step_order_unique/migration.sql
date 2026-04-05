@@ -1,0 +1,3 @@
+-- This migration file was missing from the repository.
+-- The corresponding database changes were handled outside this repo revision.
+-- Intentionally left as a no-op so later migrations can deploy safely.
